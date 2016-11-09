@@ -102,76 +102,11 @@ public class GeoMathematicsPOM
     private boolean mSiecDostepna;
 //    private Handler mUchwytTimera;
 
-    private Location mPolozenieGPS;
-    private Location mPolozenieSiec;
+//    private Location mPolozenieGPS;
+//    private Location mPolozenieSiec;
 
     private boolean mGPSWidoczny;
     private long mCzasOdOstatniejZnalezionejLokalizacji;
-
-
-    private GpsStatus.Listener mNasluchiwaczStatusuGPS = new GpsStatus.Listener()
-    {
-        @Override
-        public void onGpsStatusChanged(int event)
-        {
-            if(mPolozenie != null)
-                mGPSWidoczny = (SystemClock.elapsedRealtime()) - mCzasOdOstatniejZnalezionejLokalizacji < 3000;
-            else
-            {
-                if(mSiecDostepna)
-                    mManagerPolozenia.requestLocationUpdates(SIEC, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
-                else
-                    Toast.makeText(mKontekst, "Ni ma żadnego dostawcy lokalizacji", Toast.LENGTH_SHORT).show();
-            }
-
-            if(mGPSWidoczny)
-
-        }
-    };
-
-//    private Runnable mWykonanieTimera = new Runnable()
-//    {
-//        @Override
-//        public void run()
-//        {
-//            Log.d(TAG, "HANDLER");
-//
-//            mManagerPolozenia.removeUpdates(mNasluchiwaczPolozenia);
-//
-//            if(mGPSDostepny)
-//                mPolozenieGPS = mManagerPolozenia.getLastKnownLocation(GPS);
-//
-//            if(mSiecDostepna)
-//                mPolozenieSiec = mManagerPolozenia.getLastKnownLocation(SIEC);
-//
-//            //jesli oba położenia były ostatnio używanie
-//            if(mPolozenieGPS != null && mPolozenieSiec != null)
-//            {
-//                Log.d(TAG, "TU ESTEM");
-//                if(mPolozenieGPS.getTime() > mPolozenieSiec.getTime())
-//                    findLocation(mPolozenieGPS);
-//                else
-//                    findLocation(mPolozenieSiec);
-//                return;
-//            }
-//
-//            if(mPolozenieGPS != null)
-//            {
-//                Log.d(TAG, "A TERA TU");
-//                findLocation(mPolozenieGPS);
-//                return;
-//            }
-//
-//            if(mPolozenieSiec != null)
-//            {
-//                Log.d(TAG, "ABO TU");
-//                findLocation(mPolozenieSiec);
-//                return;
-//            }
-//
-//            findLocation(null);
-//        }
-//    };
 
     private SensorEventListener mNasłuchiwaczZdarzenCzujnikow = new SensorEventListener()
     {
@@ -217,7 +152,7 @@ public class GeoMathematicsPOM
         {
             mPolozenie = location;
 
-            mCzasOdOstatniejZnalezionejLokalizacji = SystemClock.elapsedRealtime();
+//            mCzasOdOstatniejZnalezionejLokalizacji = SystemClock.elapsedRealtime();
 
             findLocation();
         }
@@ -348,10 +283,12 @@ public class GeoMathematicsPOM
         if(!mGPSDostepny && !mSiecDostepna)
             Toast.makeText(mKontekst, "Ni ma dostawcy lokalizacji!", Toast.LENGTH_SHORT).show();
 
-//        if(mGPSDostepny)
-//            mManagerPolozenia.requestLocationUpdates(GPS, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
+        if(mGPSDostepny)
+            mManagerPolozenia.requestLocationUpdates(GPS, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
 
-        mManagerPolozenia.addGpsStatusListener(mNasluchiwaczStatusuGPS);
+        if(mSiecDostepna)
+            mManagerPolozenia.requestLocationUpdates(SIEC, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
+
 
 //        mUchwytTimera = new Handler();
 //        mUchwytTimera.postDelayed(mWykonanieTimera, 20000);

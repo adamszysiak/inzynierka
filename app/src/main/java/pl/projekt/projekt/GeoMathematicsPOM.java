@@ -119,8 +119,14 @@ public class GeoMathematicsPOM
                     if(mPolozenie != null)
                         mGPSWidoczny = (SystemClock.elapsedRealtime() - mCzasOdOstatniejZnalezionejLokalizacji) < 3000;
 
+                    Log.d(TAG, "onGpsStatusChanged: mGPSWidoczny = " + mGPSWidoczny);
+
                     if(mGPSWidoczny)
+                    {
                         mManagerPolozenia.getLastKnownLocation(GPS);
+                        Log.d(TAG, "onGpsStatusChanged: szerokosc i dlugosc = "
+                                + mPolozenie.getLatitude() + " i " + mPolozenie.getLongitude());
+                    }
                     else
                     {
                         if(mSiecDostepna)

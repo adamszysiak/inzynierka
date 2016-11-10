@@ -16,7 +16,7 @@
         android:layout_gravity="center_horizontal">
 
         <TextView
-            android:id="@+id/bladGPS"
+            android:id="@+id/blad_gps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -25,10 +25,10 @@
             android:visibility="gone"/>
 
         <TextView
-            android:id="@+id/dostawcaText"
+            android:id="@+id/dostawca_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/bladGPS"
+            android:layout_below="@+id/blad_gps"
             android:layout_centerHorizontal="true"
             android:text="@string/dostawca_text"/>
 
@@ -36,12 +36,12 @@
             android:id="@+id/dostawca"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dostawcaText"
+            android:layout_below="@+id/dostawca_text"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/szerokoscText"
+            android:id="@+id/szerokosc_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/dostawca"
@@ -52,12 +52,12 @@
             android:id="@+id/szerokosc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/szerokoscText"
+            android:layout_below="@+id/szerokosc_text"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/dlugoscText"
+            android:id="@+id/dlugosc_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/szerokosc"
@@ -68,12 +68,12 @@
             android:id="@+id/dlugosc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dlugoscText"
+            android:layout_below="@+id/dlugosc_text"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/adresText"
+            android:id="@+id/adres_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/dlugosc"
@@ -84,7 +84,7 @@
             android:id="@+id/dokladnosc"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/adresText"
+            android:layout_below="@+id/adres_text"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceSmall"/>
 
@@ -97,7 +97,7 @@
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <Button
-            android:id="@+id/pokazNaMapieButton"
+            android:id="@+id/pokaz_na_mapie_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/adres"

@@ -59,9 +59,9 @@ public class MenuActivity extends Activity
     {
 
 
-        mGdzieJestemMenuButton = (Button) findViewById(R.id.gdzieJestemMenuButton);
-        mIdentyfikacjaUlicMenuButton = (Button) findViewById(R.id.identyfikacjaUlicMenuButton);
-        mWyjscieMenuButton = (Button) findViewById(R.id.wyjscieMenuButton);
+        mGdzieJestemMenuButton = (Button) findViewById(R.id.gdzie_jestem_menu_button);
+        mIdentyfikacjaUlicMenuButton = (Button) findViewById(R.id.identyfikacja_ulic_menu_button);
+        mWyjscieMenuButton = (Button) findViewById(R.id.wyjscie_menu_button);
 
         mGdzieJestemMenuButton.setOnClickListener(new View.OnClickListener()
         {
@@ -118,7 +118,7 @@ public class MenuActivity extends Activity
         LayoutInflater wypelniacz = getLayoutInflater();
 
         View widokDialogu = wypelniacz.inflate(R.layout.alert_dialog_edit_text, null);
-        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokoscTelefonu);
+        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokosc_telefonu);
 
         //wycentrowany tytul
         View widokTytulu = wypelniacz.inflate(R.layout.alert_dialog_title, null);

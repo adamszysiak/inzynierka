@@ -175,8 +175,8 @@ public class WhereActivity extends Activity implements LocationListener
         mDostawcaTV = (TextView) findViewById(R.id.dostawca);
         mDokladnoscTV = (TextView) findViewById(R.id.dokladnosc);
         mAdresTV = (TextView) findViewById(R.id.adres);
-        mBladGPSTV = (TextView) findViewById(R.id.bladGPS);
-        mPokazNaMapieButton = (Button) findViewById(R.id.pokazNaMapieButton);
+        mBladGPSTV = (TextView) findViewById(R.id.blad_gps);
+        mPokazNaMapieButton = (Button) findViewById(R.id.pokaz_na_mapie_button);
 
         mPokazNaMapieButton.setOnClickListener(new View.OnClickListener()
         {
@@ -474,7 +474,7 @@ public class WhereActivity extends Activity implements LocationListener
         LayoutInflater wypelniacz = getLayoutInflater();
 
         View widokDialogu = wypelniacz.inflate(R.layout.alert_dialog_edit_text, null);
-        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokoscTelefonu);
+        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokosc_telefonu);
 
         //wycentrowany tytul
         View widokTytulu = wypelniacz.inflate(R.layout.alert_dialog_title, null);

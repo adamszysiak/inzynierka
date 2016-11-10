@@ -12,7 +12,7 @@
     tools:context="pl.projekt.projekt.MenuActivity">
 
     <Button
-        android:id="@+id/gdzieJestemMenuButton"
+        android:id="@+id/gdzie_jestem_menu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
@@ -20,19 +20,19 @@
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <Button
-        android:id="@+id/identyfikacjaUlicMenuButton"
+        android:id="@+id/identyfikacja_ulic_menu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/gdzieJestemMenuButton"
+        android:layout_below="@+id/gdzie_jestem_menu_button"
         android:layout_centerHorizontal="true"
         android:text="@string/identyfikacja_ulic"
         android:textAppearance="?android:attr/textAppearanceLarge"/>
 
     <Button
-        android:id="@+id/wyjscieMenuButton"
+        android:id="@+id/wyjscie_menu_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/identyfikacjaUlicMenuButton"
+        android:layout_below="@+id/identyfikacja_ulic_menu_button"
         android:layout_centerHorizontal="true"
         android:text="@string/wyjscie"
         android:textAppearance="?android:attr/textAppearanceLarge"/>

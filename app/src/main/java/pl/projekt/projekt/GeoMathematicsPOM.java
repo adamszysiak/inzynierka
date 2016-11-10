@@ -232,14 +232,14 @@ public class GeoMathematicsPOM
 
     private void initializeTestTVs()
     {
-        mAktualnaSzerokoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.aktualnaSzerokoscTest);
-        mAktualnaDlugoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.aktualnaDlugoscTest);
-        mNachylenieTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.nachylenieTest);
-        mDystansTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.dystansTest);
-        mAzymutTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.azymutTest);
-        mWskazanaSzerokoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazanaSzerokoscTest);
-        mWskazanaDlugoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazanaDlugoscTest);
-        mWskazanaUlicaTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazanaUlicaTest);
+        mAktualnaSzerokoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.aktualna_szerokosc_test);
+        mAktualnaDlugoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.aktualna_dlugosc_test);
+        mNachylenieTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.nachylenie_test);
+        mDystansTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.dystans_test);
+        mAzymutTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.azymut_test);
+        mWskazanaSzerokoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazana_szerokosc_test);
+        mWskazanaDlugoscTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazana_dlugosc_test);
+        mWskazanaUlicaTestTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazana_ulica_test);
     }
 
     private void initializeAll()
@@ -257,7 +257,7 @@ public class GeoMathematicsPOM
         mGeocoder = new Geocoder(mKontekst, Locale.getDefault());
 
         mLinieIV = (ImageView) ((Activity) mKontekst).findViewById(R.id.linie);
-        mWskazanaUlicaTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazanaUlica);
+        mWskazanaUlicaTV = (TextView) ((Activity) mKontekst).findViewById(R.id.wskazana_ulica);
 
         mWysokoscTelefonu = ((Activity) mKontekst).getIntent().getExtras().getDouble(WYSOKOSC_TELEFONU);
     }

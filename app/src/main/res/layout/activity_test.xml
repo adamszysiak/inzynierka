@@ -16,129 +16,129 @@
         android:layout_gravity="center_horizontal">
 
         <TextView
-            android:id="@+id/aktualnaSzerokoscTextTest"
+            android:id="@+id/aktualna_szerokosc_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:text="Aktualna szerokość geograficzna: "/>
 
         <TextView
-            android:id="@+id/aktualnaSzerokoscTest"
+            android:id="@+id/aktualna_szerokosc_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/aktualnaSzerokoscTextTest"
+            android:layout_below="@+id/aktualna_szerokosc_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/aktualnaDlugoscTextTest"
+            android:id="@+id/aktualna_dlugosc_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/aktualnaSzerokoscTest"
+            android:layout_below="@+id/aktualna_szerokosc_test"
             android:layout_centerHorizontal="true"
             android:text="Aktualna długość geograficzna: "/>
 
         <TextView
-            android:id="@+id/aktualnaDlugoscTest"
+            android:id="@+id/aktualna_dlugosc_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/aktualnaDlugoscTextTest"
+            android:layout_below="@+id/aktualna_dlugosc_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/nachylenieTextTest"
+            android:id="@+id/nachylenie_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/aktualnaDlugoscTest"
+            android:layout_below="@+id/aktualna_dlugosc_test"
             android:layout_centerHorizontal="true"
             android:text="Nachylenie: "/>
 
         <TextView
-            android:id="@+id/nachylenieTest"
+            android:id="@+id/nachylenie_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/nachylenieTextTest"
+            android:layout_below="@id/nachylenie_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/dystansTextTest"
+            android:id="@+id/dystans_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nachylenieTest"
+            android:layout_below="@+id/nachylenie_test"
             android:layout_centerHorizontal="true"
             android:text="Dystans: "/>
 
         <TextView
-            android:id="@+id/dystansTest"
+            android:id="@+id/dystans_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dystansTextTest"
+            android:layout_below="@+id/dystans_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/azymutTextTest"
+            android:id="@+id/azymut_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/dystansTest"
+            android:layout_below="@+id/dystans_test"
             android:layout_centerHorizontal="true"
             android:text="Azymut: "/>
 
         <TextView
-            android:id="@+id/azymutTest"
+            android:id="@+id/azymut_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/azymutTextTest"
+            android:layout_below="@+id/azymut_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/wskazanaSzerokoscTextTest"
+            android:id="@+id/wskazana_szerokosc_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/azymutTest"
+            android:layout_below="@+id/azymut_test"
             android:layout_centerHorizontal="true"
             android:text="Wskazana szerokość geograficzna: "/>
 
         <TextView
-            android:id="@+id/wskazanaSzerokoscTest"
+            android:id="@+id/wskazana_szerokosc_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/wskazanaSzerokoscTextTest"
+            android:layout_below="@+id/wskazana_szerokosc_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/wskazanaDlugoscTextTest"
+            android:id="@+id/wskazana_dlugosc_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/wskazanaSzerokoscTest"
+            android:layout_below="@+id/wskazana_szerokosc_test"
             android:layout_centerHorizontal="true"
             android:text="Wskazana długość geograficzna: "/>
 
         <TextView
-            android:id="@+id/wskazanaDlugoscTest"
+            android:id="@+id/wskazana_dlugosc_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/wskazanaDlugoscTextTest"
+            android:layout_below="@+id/wskazana_dlugosc_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 
         <TextView
-            android:id="@+id/wskazanaUlicaTextTest"
+            android:id="@+id/wskazana_ulica_text_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/wskazanaDlugoscTest"
+            android:layout_below="@+id/wskazana_dlugosc_test"
             android:layout_centerHorizontal="true"
             android:text="Wskazana ulica: "/>
 
         <TextView
-            android:id="@+id/wskazanaUlicaTest"
+            android:id="@+id/wskazana_ulica_test"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/wskazanaUlicaTextTest"
+            android:layout_below="@+id/wskazana_ulica_text_test"
             android:layout_centerHorizontal="true"
             android:textAppearance="?android:attr/textAppearanceLarge"/>
 

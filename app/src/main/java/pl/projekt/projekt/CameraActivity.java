@@ -98,7 +98,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
 
     private void initializeCameraPreview()
     {
-        mPodgladKamery = (JavaCameraView) findViewById(R.id.podgladKamery);
+        mPodgladKamery = (JavaCameraView) findViewById(R.id.podglad_kamery);
 
         mPodgladKamery.setVisibility(SurfaceView.VISIBLE);
         mPodgladKamery.setCvCameraViewListener(this);
@@ -154,7 +154,7 @@ public class CameraActivity extends Activity implements CameraBridgeViewBase.CvC
         LayoutInflater wypelniacz = getLayoutInflater();
 
         View widokDialogu = wypelniacz.inflate(R.layout.alert_dialog_edit_text, null);
-        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokoscTelefonu);
+        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokosc_telefonu);
 
         //wycentrowany tytul
         View widokTytulu = wypelniacz.inflate(R.layout.alert_dialog_title, null);

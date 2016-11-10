@@ -194,7 +194,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LayoutInflater wypelniacz = getLayoutInflater();
 
         View widokDialogu = wypelniacz.inflate(R.layout.alert_dialog_edit_text, null);
-        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokoscTelefonu);
+        final EditText wysokoscTelefonuET = (EditText) widokDialogu.findViewById(R.id.wysokosc_telefonu);
 
         //wycentrowany tytul
         View widokTytulu = wypelniacz.inflate(R.layout.alert_dialog_title, null);

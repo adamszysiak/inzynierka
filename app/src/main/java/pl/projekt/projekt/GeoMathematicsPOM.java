@@ -168,7 +168,7 @@ public class GeoMathematicsPOM
             findDistance();
             findAzimuth();
             findPointedLocation();
-            findStreet();
+            findPointedStreet();
         }
 
         @Override
@@ -225,7 +225,7 @@ public class GeoMathematicsPOM
         findLocation();
 
 //        findPointedLocation();
-//        findStreet();
+//        findPointedStreet();
 
         mCzyWykonanGM = true;
     }
@@ -516,6 +516,7 @@ public class GeoMathematicsPOM
             double r;                                   //zmienna pomocnicza (w stopniach)
             double A;                                   //---------------||---------------
             double D = mDystans / (DLUGOSC_ROWNIKA / 360);  //---------------||---------------
+
             if((mAzymut >= 0 && mAzymut < 90) || (mAzymut >= 270 && mAzymut < 360))
             {
                 r = 0;
@@ -570,9 +571,9 @@ public class GeoMathematicsPOM
         }
     }
 
-    private void findStreet()
+    private void findPointedStreet()
     {
-        Log.d(TAG, "findStreet: watek " + Thread.currentThread().getName());
+        Log.d(TAG, "findPointedStreet: watek " + Thread.currentThread().getName());
 
         if(mWskazanaSzerokosc != -999 && mWskazanaDlugosc != -999)
         {

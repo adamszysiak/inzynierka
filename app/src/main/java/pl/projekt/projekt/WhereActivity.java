@@ -50,31 +50,17 @@ public class WhereActivity extends Activity implements LocationListener
     private String mDostawca;
     private double mSzerokosc;
     private double mDlugosc;
-    private int mWidocznoscDokladnosci;
     private float mDokladnosc;
-    private int mUstawienieAdresu;
-    private int mKolorAdresu;
     private String mAdres;
-    private int mWidocznoscBleduGPS;
     private String mBladGPS;
-    private int mWidocznoscPrzycisku;
 
     private LocationManager mManagerPolozenia;
     private Location mPolozenie;
     private Criteria mKryteria;
     private Geocoder mGeocoder;
 
-    private final static String DOSTAWCA = "DOSTAWCA";
     public final static String SZEROKOSC = "SZEROKOSC";
     public final static String DLUGOSC = "DLUGOSC";
-    private final static String WIDOCZNOSC_DOKLADNOSCI = "WIDOCZNOSC DOKLADNOSCI";
-    private final static String DOKLADNOSC = "DOKLADNOSC";
-    private final static String USTAWIENIE_ADRESU = "USTAWIENIE ADRESU";
-    private final static String KOLOR_ADRESU = "KOLOR ADRESU";
-    private final static String ADRES = "ADRES";
-    private final static String WIDOCZNOSC_BLEDU_GPS = "WIDOCZNOSC BLEDU GPS";
-    private final static String BLAD_GPS = "BLAD GPS";
-    private final static String WIDOCZNOSC_PRZYCISKU = "WIDOCZNOSC PRZYCISKU";
 
     private static final int WYMAGANE_POZWOLENIA = 123;
 
@@ -121,8 +107,7 @@ public class WhereActivity extends Activity implements LocationListener
         }
         catch(IllegalArgumentException e)
         {
-            mWidocznoscBleduGPS = View.VISIBLE;
-            mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
+            mBladGPSTV.setVisibility(View.VISIBLE);
             mBladGPSTV.setText(R.string.gps_blad);
         }
 
@@ -134,34 +119,24 @@ public class WhereActivity extends Activity implements LocationListener
             mSzerokoscTV.setText(String.valueOf(mSzerokosc + "°"));
             mDlugoscTV.setText(String.valueOf(mDlugosc + "°"));
             mDostawcaTV.setText(mDostawca);
-            mWidocznoscDokladnosci = View.GONE;
-            mDokladnoscTV.setVisibility(mWidocznoscDokladnosci);
-            mUstawienieAdresu = Gravity.CENTER;
-            mAdresTV.setGravity(mUstawienieAdresu);
-            mKolorAdresu = getResources().getColor(R.color.czerwony);
-            mAdresTV.setTextColor(mKolorAdresu);
+            mDokladnoscTV.setVisibility(View.GONE);
+            mAdresTV.setGravity(Gravity.CENTER);
+            mAdresTV.setTextColor(getResources().getColor(R.color.czerwony));
             mAdresTV.setText(getString(R.string.adres_blad));
-            mWidocznoscBleduGPS = View.GONE;
-            mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
-            mWidocznoscPrzycisku = View.VISIBLE;
-            mPokazNaMapieButton.setVisibility(mWidocznoscPrzycisku);
+            mBladGPSTV.setVisibility(View.GONE);
+            mPokazNaMapieButton.setVisibility(View.VISIBLE);
         }
         else
         {
             mSzerokoscTV.setText(R.string.brak);
             mDlugoscTV.setText(R.string.brak);
             mDostawcaTV.setText(R.string.brak);
-            mWidocznoscDokladnosci = View.GONE;
-            mDokladnoscTV.setVisibility(mWidocznoscDokladnosci);
-            mUstawienieAdresu = Gravity.NO_GRAVITY;
-            mAdresTV.setGravity(mUstawienieAdresu);
-            mKolorAdresu = getResources().getColor(R.color.bialy);
-            mAdresTV.setTextColor(mKolorAdresu);
+            mDokladnoscTV.setVisibility(View.GONE);
+            mAdresTV.setGravity(Gravity.NO_GRAVITY);
+            mAdresTV.setTextColor(getResources().getColor(R.color.bialy));
             mAdresTV.setText(R.string.brak);
-            mWidocznoscBleduGPS = View.GONE;
-            mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
-            mWidocznoscPrzycisku = View.VISIBLE;
-            mPokazNaMapieButton.setVisibility(mWidocznoscPrzycisku);
+            mBladGPSTV.setVisibility(View.GONE);
+            mPokazNaMapieButton.setVisibility(View.GONE);
         }
 
         //pozwala na określenie adresu na podstawie współrzędnych
@@ -241,8 +216,7 @@ public class WhereActivity extends Activity implements LocationListener
         }
         catch(IllegalArgumentException e)
         {
-            mWidocznoscBleduGPS = View.VISIBLE;
-            mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
+            mBladGPSTV.setVisibility(View.VISIBLE);
             mBladGPSTV.setText(R.string.gps_blad);
         }
     }
@@ -276,8 +250,7 @@ public class WhereActivity extends Activity implements LocationListener
             mDlugoscTV.setText(String.valueOf(mDlugosc + "°"));
             mDostawcaTV.setText(mDostawca);
 
-            mWidocznoscPrzycisku = View.VISIBLE;
-            mPokazNaMapieButton.setVisibility(mWidocznoscPrzycisku);
+            mPokazNaMapieButton.setVisibility(View.VISIBLE);
 
             try
             {
@@ -304,28 +277,21 @@ public class WhereActivity extends Activity implements LocationListener
 //                }
 //                mAdres += "\n\n";
 //            }
-                mWidocznoscDokladnosci = View.VISIBLE;
-                mDokladnoscTV.setVisibility(mWidocznoscDokladnosci);
+
+                mDokladnoscTV.setVisibility(View.VISIBLE);
                 mDokladnoscTV.setText(String.format("(" + getString(R.string.dokladnosc) + " %1.2f m)", mDokladnosc));
-                mUstawienieAdresu = Gravity.NO_GRAVITY;
-                mAdresTV.setGravity(mUstawienieAdresu);
-                mKolorAdresu = getResources().getColor(R.color.bialy);
-                mAdresTV.setTextColor(mKolorAdresu);
+                mAdresTV.setGravity(Gravity.NO_GRAVITY);
+                mAdresTV.setTextColor(getResources().getColor(R.color.bialy));
                 mAdresTV.setText(mAdres);
-                mWidocznoscBleduGPS = View.GONE;
-                mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
+                mBladGPSTV.setVisibility(View.GONE);
             }
             catch(Exception e)
             {
-                mWidocznoscDokladnosci = View.GONE;
-                mDokladnoscTV.setVisibility(mWidocznoscDokladnosci);
-                mUstawienieAdresu = Gravity.CENTER;
-                mAdresTV.setGravity(mUstawienieAdresu);
-                mKolorAdresu = getResources().getColor(R.color.czerwony);
-                mAdresTV.setTextColor(mKolorAdresu);
+                mDokladnoscTV.setVisibility(View.GONE);
+                mAdresTV.setGravity(Gravity.CENTER);
+                mAdresTV.setTextColor(getResources().getColor(R.color.czerwony));
                 mAdresTV.setText(R.string.adres_blad);
-                mWidocznoscBleduGPS = View.GONE;
-                mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
+                mBladGPSTV.setVisibility(View.GONE);
             }
         }
     }
@@ -346,66 +312,6 @@ public class WhereActivity extends Activity implements LocationListener
     public void onProviderDisabled(String s)
     {
 
-    }
-
-    @Override
-    protected void onSaveInstanceState(Bundle outState)
-    {
-        super.onSaveInstanceState(outState);
-
-        String dostawca = mDostawcaTV.getText().toString();
-        String szerokosc = mSzerokoscTV.getText().toString();
-        String dlugosc = mDlugoscTV.getText().toString();
-        String dokladnosc = mDokladnoscTV.getText().toString();
-        String adres = mAdresTV.getText().toString();
-        String bladGPS = mBladGPSTV.getText().toString();
-
-        outState.putString(DOSTAWCA, dostawca);
-        outState.putString(SZEROKOSC, szerokosc);
-        outState.putString(DLUGOSC, dlugosc);
-        outState.putInt(WIDOCZNOSC_DOKLADNOSCI, mWidocznoscDokladnosci);
-        outState.putString(DOKLADNOSC, dokladnosc);
-        outState.putInt(USTAWIENIE_ADRESU, mUstawienieAdresu);
-        outState.putInt(KOLOR_ADRESU, mKolorAdresu);
-        outState.putString(ADRES, adres);
-        outState.putInt(WIDOCZNOSC_BLEDU_GPS, mWidocznoscBleduGPS);
-        outState.putString(BLAD_GPS, bladGPS);
-        outState.putInt(WIDOCZNOSC_PRZYCISKU, mWidocznoscPrzycisku);
-    }
-
-    @Override
-    protected void onRestoreInstanceState(Bundle savedInstanceState)
-    {
-        super.onRestoreInstanceState(savedInstanceState);
-
-        if(savedInstanceState != null)
-        {
-            String dostawca = savedInstanceState.getString(DOSTAWCA);
-            String szerokosc = savedInstanceState.getString(SZEROKOSC);
-            String dlugosc = savedInstanceState.getString(DLUGOSC);
-            mWidocznoscDokladnosci = savedInstanceState.getInt(WIDOCZNOSC_DOKLADNOSCI);
-            String dokladnosc = savedInstanceState.getString(DOKLADNOSC);
-            mUstawienieAdresu = savedInstanceState.getInt(USTAWIENIE_ADRESU);
-            mKolorAdresu = savedInstanceState.getInt(KOLOR_ADRESU);
-            String adres = savedInstanceState.getString(ADRES);
-            mWidocznoscBleduGPS = savedInstanceState.getInt(WIDOCZNOSC_BLEDU_GPS);
-            String bladGPS = savedInstanceState.getString(BLAD_GPS);
-            mWidocznoscPrzycisku = savedInstanceState.getInt(WIDOCZNOSC_PRZYCISKU);
-
-            mDostawcaTV.setText(dostawca);
-            mSzerokoscTV.setText(szerokosc);
-            mDlugoscTV.setText(dlugosc);
-            mDokladnoscTV.setVisibility(mWidocznoscDokladnosci);
-//            if(mWidocznoscDokladnosci == View.VISIBLE)
-            mDokladnoscTV.setText(dokladnosc);
-            mAdresTV.setGravity(mUstawienieAdresu);
-            mAdresTV.setTextColor(mKolorAdresu);
-            mAdresTV.setText(adres);
-            mBladGPSTV.setVisibility(mWidocznoscBleduGPS);
-//            if(mWidocznoscBleduGPS == View.VISIBLE)
-            mBladGPSTV.setText(bladGPS);
-            mPokazNaMapieButton.setVisibility(mWidocznoscPrzycisku);
-        }
     }
 
     @Override
@@ -508,7 +414,8 @@ public class WhereActivity extends Activity implements LocationListener
                         String wprowadzonaWartosc = wysokoscTelefonuET.getText().toString();
 
                         if(wprowadzonaWartosc.equals(""))
-                            Toast.makeText(WhereActivity.this, R.string.alert_brak, Toast.LENGTH_SHORT).show();
+                            Toast.makeText(WhereActivity.this, R.string.alert_brak, Toast.LENGTH_SHORT)
+                                    .show();
                         else
                         {
                             mWysokoscTelefonu = Double.parseDouble(wprowadzonaWartosc);

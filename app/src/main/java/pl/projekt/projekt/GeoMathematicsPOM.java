@@ -98,15 +98,42 @@ public class GeoMathematicsPOM
     private Looper mPetlaNasluchiwaczaPolozenia;
     private static final String WATEK_POLOZENIA = "watek_polozenia";
 
-    private boolean mGPSDostepny;
-    private boolean mSiecDostepna;
+    private boolean mGPSDostepny = false;
+    private boolean mSiecDostepna = false;
 //    private Handler mUchwytTimera;
 
 //    private Location mPolozenieGPS;
 //    private Location mPolozenieSiec;
 
-    private boolean mGPSWidoczny;
+    private boolean mGPSWidoczny = false;
     private long mCzasOdOstatniejZnalezionejLokalizacji;
+
+    private GpsStatus.Listener mNasluchwiaczStatusuGPS = new GpsStatus.Listener()
+    {
+        @Override
+        public void onGpsStatusChanged(int event)
+        {
+            switch(event)
+            {
+                case GpsStatus.GPS_EVENT_SATELLITE_STATUS:
+                    if(mPolozenie != null)
+                        mGPSWidoczny = (SystemClock.elapsedRealtime() - mCzasOdOstatniejZnalezionejLokalizacji) < 3000;
+
+                    if(mGPSWidoczny)
+                        mManagerPolozenia.getLastKnownLocation(GPS);
+                    else
+                    {
+                        if(mSiecDostepna)
+                            mManagerPolozenia.requestLocationUpdates(SIEC, 0, 0,
+                                    mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
+                    }
+                    break;
+                case GpsStatus.GPS_EVENT_FIRST_FIX:
+                    mGPSWidoczny = true;
+                    break;
+            }
+        }
+    };
 
     private SensorEventListener mNasłuchiwaczZdarzenCzujnikow = new SensorEventListener()
     {
@@ -152,7 +179,7 @@ public class GeoMathematicsPOM
         {
             mPolozenie = location;
 
-//            mCzasOdOstatniejZnalezionejLokalizacji = SystemClock.elapsedRealtime();
+            mCzasOdOstatniejZnalezionejLokalizacji = SystemClock.elapsedRealtime();
 
             findLocation();
         }
@@ -285,9 +312,15 @@ public class GeoMathematicsPOM
 
         if(mGPSDostepny)
             mManagerPolozenia.requestLocationUpdates(GPS, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
+        else
+        {
+            //TODO: alert o włączeniu GPS
+        }
 
-        if(mSiecDostepna)
-            mManagerPolozenia.requestLocationUpdates(SIEC, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
+        mManagerPolozenia.addGpsStatusListener(mNasluchwiaczStatusuGPS);
+
+//        if(mSiecDostepna)
+//            mManagerPolozenia.requestLocationUpdates(SIEC, 0, 0, mNasluchiwaczPolozenia, mPetlaNasluchiwaczaPolozenia);
 
 
 //        mUchwytTimera = new Handler();

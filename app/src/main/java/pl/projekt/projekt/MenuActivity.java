@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.Gravity;
@@ -160,7 +161,20 @@ public class MenuActivity extends Activity
 
                             if(mWysokoscTelefonu > 0)
                             {
-                                streetActivity();
+                                setContentView(R.layout.activity_wait);
+
+                                Runnable oczekiwanie = new Runnable()
+                                {
+                                    @Override
+                                    public void run()
+                                    {
+                                        streetActivity();
+                                    }
+                                };
+
+                                Handler uchwytOczekiwania = new Handler();
+                                uchwytOczekiwania.postDelayed(oczekiwanie, 1000);
+
                                 dialogWysokoscTelefonu.dismiss();
                             }
                             else

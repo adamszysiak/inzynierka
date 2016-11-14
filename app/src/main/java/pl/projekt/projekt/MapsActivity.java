@@ -7,6 +7,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
@@ -235,7 +236,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                             if(mWysokoscTelefonu > 0)
                             {
-                                streetActivity();
+                                setContentView(R.layout.activity_wait);
+
+                                Runnable oczekiwanie = new Runnable()
+                                {
+                                    @Override
+                                    public void run()
+                                    {
+                                        streetActivity();
+                                    }
+                                };
+
+                                Handler uchwytOczekiwania = new Handler();
+                                uchwytOczekiwania.postDelayed(oczekiwanie, 1000);
+
                                 dialogWysokoscTelefonu.dismiss();
                             }
 
